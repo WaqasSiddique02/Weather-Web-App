@@ -1,1 +1,13 @@
 <h1>Weather Api</h1>
+<div>
+  <label for="city">City</label>
+  <input id="city" type="text" placeholder="Enter City Name" [(ngModel)]="cityName">
+  <button type="submit" (click)="getWeatherData()">Search</button>
+</div>
+<div *ngIf="result">
+  <p>Weather: {{result.weather[0].main}}</p>
+  <p>Description: {{result.weather[0].description}}</p>
+  <p>Feels Like: {{result.main.feels_like}} </p>
+  <p>Country: {{result.sys.country}}</p>
+  <p></p>
+</div>
