@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f0f8ff;
+    font-family: "Roboto", Arial, sans-serif;
+  }
+  
+  .form-control::placeholder {
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  

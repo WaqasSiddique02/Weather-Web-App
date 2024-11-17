@@ -1,13 +1,74 @@
-<h1>Weather Api</h1>
-<div>
-  <label for="city">City</label>
-  <input id="city" type="text" placeholder="Enter City Name" [(ngModel)]="cityName">
-  <button type="submit" (click)="getWeatherData()">Search</button>
-</div>
-<div *ngIf="result">
-  <p>Weather: {{result.weather[0].main}}</p>
-  <p>Description: {{result.weather[0].description}}</p>
-  <p>Feels Like: {{result.main.feels_like}} </p>
-  <p>Country: {{result.sys.country}}</p>
-  <p></p>
+<div
+  class="container vh-100 d-flex justify-content-center align-items-center text-white"
+  style="
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+  "
+>
+  <div
+    class="card text-center shadow-lg"
+    style="
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
+      border: none;
+      border-radius: 20px;
+      width: 380px;
+      padding: 20px;
+    "
+  >
+    <h3 class="fw-bold text-primary mb-4">Weather </h3>
+
+    <!-- Search Bar -->
+    <div class="mb-4">
+      <input
+        id="city"
+        type="text"
+        class="form-control mb-3 border-0 shadow-sm"
+        style="border-radius: 10px;"
+        placeholder="Enter City Name"
+        [(ngModel)]="cityName"
+      />
+      <button
+        class="btn btn-primary w-100 shadow-sm"
+        style="border-radius: 10px;"
+        (click)="getWeatherData()"
+      >
+        Search
+      </button>
+    </div>
+
+    <!-- Weather Data Display -->
+    <div *ngIf="result">
+      <h4 class="text-secondary fw-bold mb-1">{{ cityName }}</h4>
+      <h5 class="text-muted mb-3">{{ result.weather[0].main }}</h5>
+      <div
+        class="display-4 fw-bold text-primary mb-2"
+        style="font-size: 3rem;"
+      >
+        {{ result.main.temp }}°C
+      </div>
+      <p class="text-muted mb-2">{{ result.weather[0].description }}</p>
+      <p class="text-secondary">
+        <strong>Feels Like:</strong> {{ result.main.feels_like }}°C
+      </p>
+      <p class="text-secondary">
+        <strong>Country:</strong> {{ result.sys.country }}
+      </p>
+    </div>
+
+    <!-- Footer Navigation -->
+    <div class="d-flex justify-content-between mt-4">
+      <button
+        class="btn btn-outline-primary shadow-sm"
+        style="width: 48%; border-radius: 10px;"
+      >
+        Today
+      </button>
+      <button
+        class="btn btn-outline-secondary shadow-sm"
+        style="width: 48%; border-radius: 10px;"
+      >
+        Week
+      </button>
+    </div>
+  </div>
 </div>
